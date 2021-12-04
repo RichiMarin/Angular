@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RutaModelo } from '../modelos/ruta.model';
 import { SeguridadService } from './seguridad.service';
+import { RutasRoutingModule } from '../modulos/rutas/rutas-routing.module';
 
 @Injectable({
   providedIn: 'root'
