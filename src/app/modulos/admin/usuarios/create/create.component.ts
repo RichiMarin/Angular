@@ -34,7 +34,7 @@ export class CreateComponent implements OnInit {
     usuario.telefono = this.fgValidacion.controls["telefono"].value;
  
     this.usuarioService.store(usuario).subscribe((data: UsuarioModelo)=> {
-      Swal.fire('Creado correctamente!', '', 'success')
+      Swal.fire('Usuario Creado correctamente!', '', 'success')
       this.router.navigate(['/admin/get']);
     },
     (error: any) => {

@@ -38,7 +38,7 @@ export class CreateComponent implements OnInit {
     estacion.tipo = this.fgValidacion.controls["tipo"].value;
  
     this.estacionService.store(estacion).subscribe((data: EstacionModelo)=> {
-      Swal.fire('Creado correctamente!', '', 'success')
+      Swal.fire('Estacion Creada!', '', 'success')
       this.router.navigate(['/estaciones/get']);
     },
     (error: any) => {

@@ -52,7 +52,7 @@ export class EditComponent implements OnInit {
       ruta.destino = this.fgValidacion.controls["destino"].value;
          
       this.rutasService.update(ruta).subscribe((data: RutaModelo)=> {
-        Swal.fire('Editado Correctamente!', '', 'success')
+        Swal.fire('Ruta Editada!', '', 'success')
         this.router.navigate(['/rutas/get']);
       },
       (error: any) => {

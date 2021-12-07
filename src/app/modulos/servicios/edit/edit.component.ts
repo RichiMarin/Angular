@@ -62,7 +62,7 @@ export class EditComponent implements OnInit {
     servicio.ruta = this.fgValidacion.controls["ruta"].value;
  
     this.serviciosService.update(servicio).subscribe((data: ServicioModelo)=> {
-      Swal.fire('Editado Correctamente!', '', 'success')
+      Swal.fire('Servicio Editado!', '', 'success')
       this.router.navigate(['/servicios/get']);
     },
     (error: any) => {

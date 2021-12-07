@@ -28,13 +28,13 @@ export class GetComponent implements OnInit {
   delete(id?: any){
     console.log(id)
     Swal.fire({
-      title: '¿Esta seguro de eliminar este registro?',
+      title: '¿Esta seguro de eliminar este Servicio?',
       showCancelButton: true,
       confirmButtonText: 'Aceptar',
     }).then((result) => {
       if (result.isConfirmed) {
         this.serviciosService.delete(id).subscribe((data: any) => {
-          Swal.fire('¡Eliminado correctamente!', '', 'success')
+          Swal.fire('¡Servicio Eliminado!', '', 'success')
           this.getAll();
         })
       }

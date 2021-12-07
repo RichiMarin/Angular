@@ -52,7 +52,7 @@ export class EditComponent implements OnInit {
     usuario.telefono = this.fgValidacion.controls["telefono"].value;
  
     this.usuarioService.update(usuario).subscribe((data: UsuarioModelo)=> {
-      Swal.fire('Editado Correctamente!', '', 'success')
+      Swal.fire('Usuario Editado Correctamente!', '', 'success')
       this.router.navigate(['/admin/get']);
     },
     (error: any) => {

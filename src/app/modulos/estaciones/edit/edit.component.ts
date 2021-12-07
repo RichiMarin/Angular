@@ -56,7 +56,7 @@ export class EditComponent implements OnInit {
     estacion.tipo = this.fgValidacion.controls["tipo"].value;
  
     this.estacionService.update(estacion).subscribe((data: EstacionModelo)=> {
-      Swal.fire('Editado Correctamente!', '', 'success')
+      Swal.fire('Estacion Editada!', '', 'success')
       this.router.navigate(['/estaciones/get']);
     },
     (error: any) => {
