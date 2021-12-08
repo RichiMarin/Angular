@@ -1,34 +1,52 @@
-<div class="container">
-    <h3 class="center-align">Registrar Usuario</h3>
-    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
-      <div class="row">
-        <div class="input-field col s6">
-          <input formControlName="nombre" type="text" class="validate">
-          <label for="nombre">Nombre</label>
+  <div class="row">
+    <div class="col s12"></div>
+    <div class="col s6"><div class="container">
+      <h3 class="center-align">Registrar Usuario</h3>
+        <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
+          <div class="row">
+            <div class="input-field col s6">
+              <input formControlName="nombre" type="text" class="validate">
+              <label for="nombre">Nombre</label>
+            </div>
+            <div class="input-field col s6">
+              <input formControlName="apellidos" type="text" class="validate">
+              <label for="apellidos">Apellidos</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input formControlName="telefono" type="text" class="validate">
+              <label for="telefono">Telefono</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input formControlName="correo" type="email" class="validate">
+              <label for="correo">Correo</label>
+              <span class="helper-text" data-error="Correo invalido" data-success="right">Estado</span>
+            </div>
+          </div>
+       
+          <div class="row center-align">
+            <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </form>
+      </div></div>
+    <div class="col s4">
+      <br>
+      <br>
+      <br>
+      <div class="card">
+        <div class="card-image">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPDw8QDxAQEBAQGRATEw8XEBYQDw8TFxQYGBgYFhcZHSktGRsmHBcZIjIiJiosLy8vGCA1OjUtOSouNSwBCgoKDg0OGxAQHDAmIScwLjA5NC4vNy4uLjAuLi4uLjEsLi4uLi4uMC4wLi4uLi4uLi4uLi4uLi4uLi4uLi4uLv/AABEIAKUBMQMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAQIDBAYFBwj/xABFEAACAQICBQYKBwcDBQAAAAAAAQIDEQQhBRIxUWEGIkFxkZIHExQyM1JTgZOhFUJVgrHB0xYjYnKy0dIX4fAkQ2Oiwv/EABsBAQACAwEBAAAAAAAAAAAAAAABBAIDBgUH/8QANBEAAgECAgYJBAICAwAAAAAAAAECAxEEIRITMUFRkQUUMlJhcYGh0SKxwfAz8bLSFSNC/9oADAMBAAIRAxEAPwCwAOyPmoAAAAAAAAAAIAAJtc9qhyaraqqV5U8LB/XqTVNvqW2/B2MJ1YQV5Oxuo4erWdqcW/x5vYvWx4gPXlQ0bHKekk3wwtSUe1XuZKWicLVyw2kKEm9kJwlh2+C1tr9xq61S3t8n8Fj/AI6u9iT8FKLfJSPFBvaS0RXwztWptJ7H5yl1NZe7aaBvjKMleLuipOnKnLRmmnweRIAJMAAAACAASCAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXoUZVJRhBOUpNKMVtbZQ97RlVYLB1sc0vGyficOmvNm1aUvcr91rpNVapq4X37F5v8AcyzhaGuqaLdltb4JbfheLQ0hpGlopeLoqNbHNc+o1eOHutkV0y/49x4FHB1sXPx+KqSlfpk7ykuF/NXy3I09D4Z162tNuSV5Su7uTv0ve3+Z1qOS6Y6Tlhpaum/+xq7lwXBbl5bst7uu06I6Ohio6yorUk7RjudtrlvfPN33ZPzHoHD7p9etmYK3JqLu6cpRtvSa7VY6DD0dbN7PxPRwuB8cne8aauk19aXDgjxaPSOPv9NR+tnzumj263RuBcbSpR9FZ+1mcToflJiME3Rn++obJYafOha/1G/N92XA9fSejqUqMcZg25YabtKL86hL1Zdu3itt03ocsNHeL5zXOjzW+iUWnZ/L5mHkRpZYfEeKqegxFqdSLySvlGfBpvbubOvwWKdWisRBWeekvFbfXenbY0mcfjcIqdV4Wq7r/wAy3pPZ6bpLirq1jHcHraShLD1qlGc6zcW1dSVpReaezpTRoN0//J2x/se3GakrrYcxKMoScZKzTtyMJBkqauWrrcbtP8CsXZ3snwewyuQQ0ZKcFZtp2Xuu7rK/vLYmspu6SWzreS2laTyabS6U30O6vn1Ix3DcZHFbHGyullJXXRzsjBONm1u4WZsOO9KKk027vnLJvV4ZmCcru/8AtkskEQioIBmSSCCSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQz0+XcvF4fRtBZJU5VZLfKdnn79btZ5jPT8Ikbx0dV6J0FD3x2/1lTFdqHm/sengP46z8I/5f0ebyU/72/mf/AEdHSpSm7RTfS7bjk+TdfVquHRNP5Zr8H2naaLxSpVLy82S1ZdNlvOD6bpW6Qbm7KSi/bR5XjyO96CqXwCUdsXJet3L7SR6GCwMpK7jqxX1W9Vy68skeng76i1oeLezU19dRs7KzMkGmk1sdrdRE3tS4XybSvvsZQpRgrI3zm5u7OH8IVTm004uLld2clJtRlJJ5N5PJ24nDHU+ELEa+IhFO6grfOz+aZyx1HRcVHDRa3tv3a+yRx/TU3LFST3KK9r/ds6vwg4icpYCvrNPEYeEpJOyc45yf/sl7jlPLJ+1n3jpvCLzI6JovKcKEXJdK17L8YPsOQaLWGb1S9fuzdiaUJVW2uH2Rn8sn7WfeHls/az7xrNFGizpM09XhwN3y2ftZ/EI8un7WfxDTaKNEXZKw1Ph7I3vLp+1fxB5dP2r+IaJDROkyeq0+Hsjf8ul7V/ELwxs+io377nmF6PnIXZEsNTS2eyOpwdbxkFJ7c0+tGc09Eej+8zcLMXdHOVoqNSSXEAAk1AAAAAAAAAAAAAAAAAAAAAAAAAAAEM6CeH8u0VOlHOvg5OpGO2U6bbckt+15fwx3ngG5onSU8LWjUp5tZOOxSvti/wDm40Yim6kPp2rNea+S5gq8aNS8+y1Z+T3+jsznNHt+Ng45NPJvJLp27jt4LWtq53tZLNu+y28w6W5MQxUoYvR9pUqkoqpQ810Ztq/NXRd5pbNqy2fQ9G6JpUEnGN52s6j8577bl1HJdM4frU6bjla6d9q2ZW/pc8u26Fm8NConndpprY1Z5/P2yz1sLgqkaVNNZqKuulO2x5mlpGVaNOUoQXNvrSvnBb0mdOaawUeep8+ElbVfSum/yK88P9OjFsvRq/VdnxjlLVvNRcLOOypfz4vhbod/mU5KaIeNxdKlbmJ69R9CjF59uUeuSPe5X8ma09IKnhqUpRqKMo5twgllK8nss88/WW9GLTuPpaLw08BhZqeKq5YrEL6i9nHjm1wTb2vL3MItVhqdGHatuu7cXnd28OOSS2LncVDXYudap2U99k3wWSSfDy2u+Zz/ACy0qsZpCtVg704tQpPodOGSa4N3l948ZoU7b12kuS3rtPRpw0YqKRqlV0pNtlWirRZyW9dpDkt67TOz4EqS4mNkNF3Jb12lHNb12k2fAzUlxKtAnWW9doaBmncq0TS85Ein5yAlsZ0miPR/eZuGnoj0f3mbhZhsOWxH8svMAAyNAAAAAAAAAAAAAAAAAAAAAAAAAAAAIJABnwOPrYafjKE3GX1ltjNbmuk7DA+EKjq/9TCVNrbOPPj16u1dWZw5r6RinSn1fmVcRhKdVXks+O89HA4+tQkoxeV9jzX75H1ahy20dON44qFuMZwfZKKNfGcvdH01lVlVa+rGnK798kl8z49hKPM29LMjocTy+owvtZ7r6UqXskv31Oq5Q+ELEV1Knh4+T03k5KV60l/N9X3Z8To/BvglLR8JakbuVRttK83rWzfUj5j4pI7bknyZxNfDKtSx88LCcp/u4KVnqvVcnqzjnl2JE16MI0rX0Vf5MsLiak612nJ2fps2XsfSPEv1KXYPFP1KXYcg+RmN+2MR3an6pD5F437ZxPZU/VKOqpd9cn8Hp62p3Hzj/sdh4p+pS7B4p+pS7Djv2Kx32zieyr+sP2Ix32zieyr+sNVS765P4J1s+4+a+Tt/ER9WPdQ8RD1Y91HD/sPj/trE92r+sR+w2P8AtrE9lX9Yaml31yfwTrZ91818nQ8rcNTej8beEHajXkuaspRptprimkz8/NH03lHyOxtLCYipPStavCnCU5UZqooTjHNrOrJdG4+ZtHpYGMYwejK+f7tKWKk21dW5fi5RomntRLQhtRdKreTOi0R6P7zNs1NEej+8zepwcmktrLUeycviP5ZeZUEEmRpAAAAAAAAAAAAAAAAAAAAAAAAAAABALR255rdsuAVMGkPRT6vzN7Ezi9XVVrKKefDZ/uaOP9FPq/MxecTZR7cfNfc0sCuZ72ZWiujl+797NiUSi9p6UpfWzWaOz5L8sqOFwscPVpVJOLm9ZarTUpOXS1Z5nINFGjXUpxqK0jfQxEqUtKJ9IfhEwmf7mvnboh0bPrB+EbCexr7b7Ibe8fNGijRo6lS8eZeXSVZ8OR9L/wBSMJ7Cvtvsht7xZ+E3C+xxHZD/ACPl7RsaLj++h7/6WT1Kl48zNdI1fDkfR/8AU/C+wxHZD/Ij/VHB+wxHZD/I5tlTDqtHg+ZmsfV8D1NP+EXD4nC4ijTo1lKrCVNOWoox1lZt2k9ie4+aNHW6SX7mpf1Wco0WqFOEE1FGudaVTORRoiO1F2iIrM3kN5HvaI9H95noUKzg7xfu6H1nn6I9H95m2WYq8TmcT/LLzLSk27ttve3dlQSZmkAAAAAAAAAAAAAAAAAAAAAAAAAAAEEgAvTUc9ZyW6yT/Fox6QnFUKijOdmnzbJJ7NuYK1aalFxexqxjJXM4NKSb3NHkYLGKCcZJ22proNh4+n/F2GvLRtRPKzW+/wDcj6Oq8O+iq6d9x60nQk9LSXP5M7xsOPYUeLhx7DH9HVeHfQ+jqvDvoarwJTod5c0WeKjx7CrxEePYPo6ruXfR5T0hTTau8stjMZJR7WRtpxjPsO/lmem68ePYQ6qT6U1ws0zDofT9LD4ilWa11Td9WzV8msstqvdcUjY5Scp6OMxDrRi6a1Yxs1eUrXzlbpzt1JGrWR07buN/xtLKw/0XzvfZb87CHin60+1lXiJetLvM836Rpb33WepTwFSSUklaSTWa2NXN0dGXZzNU3q+3l5mKVZvJyk1ubbRRm19HVeHfQ+jqvDvoz0HwMOsU+8ua+TTaISN36Oq8O+iVo6pwX30NB8B1mn3lzXyb2iPR/eZ6NOClGXrLNcUtq/MwYKlCnBRacnm29a178LGzTrQi01CV1mufl+BvzSseHWnpTk48TXRJBJsNYABAAAAAAAAAAAAAAAAAAAAAAAAAAAABBJaDV+cm1uTt+QBQGaUoWyjJPfrp/kYQmACStSairyaSXSLkpXJRxk4K7yW19B7uL0i5ZQ5q3/Xf9jQsVMQlUtbcezgaU6KbkttvY0NRbl2DUW5dhv2QsitqPEv6b4GhqLcuw7DC+ip/yU/6Uc9ZG5hMfKGUudH5rqN9CKpt3KWNpSrRWjuPZBWjWjNXi7r5rrLl254jTTsyASCSAQSCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCQAXopay1tnTnYmuo35nm2W+/v4mIEWAIlBPalLrSZYgklNrNFPJ4ezp/DQ8nh7On8NFzJVoyj5ytttufUQ7DSfH3MHk8PZ0/hoeTw9nT+Gi5JNkTpPiY/J4ezp/DQ8nh7On8NGQCyGk+JSNOK2RprqSRYGSnScr26OKX4jYQ3fNmMkyToyirtK38yf4MxBO5BIIJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBIAJi7NNdBarVcrOWbWV+l9ZjAsSSAAQAAACU7Pf+BBABn8f/BT7hHj/wCCn3TCSRZCyDYIJJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z">
+          <span class="card-title">Registrate en UBER</span>
         </div>
-        <div class="input-field col s6">
-          <input formControlName="apellidos" type="text" class="validate">
-          <label for="apellidos">Apellidos</label>
+        <div class="card-content">
+          <p>Registrate en nuestra pagina, te enviaremos un "email" de vuelta con
+          tu contraseña de ingreso, tu usuario sera el correo con que te diste de alta.</p>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input formControlName="telefono" type="text" class="validate">
-          <label for="telefono">Telefono</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input formControlName="correo" type="email" class="validate">
-          <label for="correo">Correo</label>
-          <span class="helper-text" data-error="Correo invalido" data-success="right">Estado</span>
-        </div>
-      </div>
-   
-      <div class="row center-align">
-        <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Enviar
-          <i class="material-icons right">send</i>
-        </button>
-      </div>
-    </form>
+    </div>
   </div>

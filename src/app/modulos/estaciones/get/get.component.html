@@ -21,8 +21,8 @@
           <td>{{p.coordenada_y}}</td>
           <td>{{p.tipo}}</td>
           <td>
-            <a routerLink="/estaciones/edit/{{p.id}}" class="btn">Editar</a>
-            <button class="btn red" (click)="delete(p.id)">Eliminar</button>
+            <a routerLink="/estaciones/edit/{{p.id}}" class="btn blue"><i class="material-icons left">edit</i></a>
+            <button class="btn black" (click)="delete(p.id)"><i class="material-icons left">delete_forever</i></button>
           </td>
         </tr>
       </tbody>
